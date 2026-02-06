@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- CACHE FIX -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Bhavya 💙</title>
+<title>Happy Rose Day Bhavya 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -23,7 +29,7 @@ body{
   width:100%;
   max-width:440px;
   background:white;
-  border-radius:25px;
+  border-radius:30px;
   padding:25px;
   text-align:center;
   box-shadow:0 25px 50px rgba(0,0,0,0.25);
@@ -31,7 +37,7 @@ body{
 
 h1{
   color:#e60073;
-  margin-bottom:8px;
+  margin-bottom:5px;
 }
 
 .subtitle{
@@ -39,10 +45,10 @@ h1{
   color:#555;
 }
 
-/* BLUE ORCHID */
+/* ORCHID */
 .orchid{
-  font-size:70px;
-  margin:15px 0;
+  font-size:72px;
+  margin:18px 0 10px;
   cursor:pointer;
   animation:glow 2s infinite;
 }
@@ -53,12 +59,18 @@ h1{
   100%{text-shadow:0 0 5px #4da6ff;}
 }
 
-/* ROSES */
-.roses{
+.orchid-text{
+  font-size:13px;
+  color:#444;
+  margin-bottom:15px;
+}
+
+/* FLOWERS GRID */
+.flowers{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
-  margin:20px 0;
+  margin-bottom:18px;
 }
 
 .flower{
@@ -68,13 +80,13 @@ h1{
 }
 
 .flower:hover{
-  transform:scale(1.4) rotate(10deg);
+  transform:scale(1.4);
 }
 
 /* MESSAGE */
 .message{
   background:#fff0f5;
-  border-radius:18px;
+  border-radius:20px;
   padding:18px;
   min-height:95px;
   display:flex;
@@ -86,13 +98,13 @@ h1{
 
 /* BUTTON */
 .next-btn{
-  margin-top:18px;
-  padding:12px 22px;
+  margin-top:20px;
+  padding:13px 25px;
   border:none;
   border-radius:30px;
   background:#ff4d88;
   color:white;
-  font-size:14px;
+  font-size:15px;
   cursor:pointer;
   display:none;
 }
@@ -112,33 +124,33 @@ h1{
 
 <body>
 
-<audio id="bgm" src="song.mp3" loop></audio>
+<audio id="bgm" src="song.mp3?v=2" preload="auto" loop></audio>
 
 <div class="card" id="page1">
   <h1>Happy Rose Day 🌹</h1>
   <p class="subtitle">For Bhavya, the most special girl 💖</p>
 
-  <!-- BLUE ORCHID -->
+  <!-- ORCHID -->
   <div class="orchid" onclick="orchidClick()">💙🌸</div>
-  <p style="font-size:12px;color:#555;margin-bottom:10px;">
+  <div class="orchid-text">
     Blue Orchid – because you are rare, unique & irreplaceable 💙
-  </p>
+  </div>
 
-  <!-- ROSES -->
-  <div class="roses">
+  <!-- FLOWERS -->
+  <div class="flowers">
     <div class="flower" onclick="select('red')">🌹</div>
     <div class="flower" onclick="select('pink')">🌸</div>
     <div class="flower" onclick="select('yellow')">🌼</div>
-    <div class="flower" onclick="select('white')">🤍🌹</div>
-    <div class="flower" onclick="select('purple')">💜🌹</div>
-    <div class="flower" onclick="select('orange')">🧡🌹</div>
+    <div class="flower" onclick="select('white')">🤍</div>
+    <div class="flower" onclick="select('purple')">💜</div>
+    <div class="flower" onclick="select('orange')">🧡</div>
     <div class="flower" onclick="select('lavender')">💐</div>
-    <div class="flower" onclick="select('blue')">💙🌹</div>
-    <div class="flower" onclick="select('green')">💚🌹</div>
+    <div class="flower" onclick="select('blue')">💙</div>
+    <div class="flower" onclick="select('green')">💚</div>
   </div>
 
   <div class="message" id="msg">
-    Tap a flower, Bhavya 💫
+    Tap a flower, Bhavya 🌸
   </div>
 
   <button class="next-btn" id="nextBtn" onclick="goFinal()">Next 💖</button>
@@ -149,6 +161,10 @@ h1{
   <p>
     Among all flowers,<br>
     you are my Blue Orchid — rare & unforgettable.<br><br>
+
+    Sending you a petal of my heart,<br>
+    You are my favorite flower.<br><br>
+
     I choose you today,<br>
     tomorrow,<br>
     and always.
@@ -161,27 +177,25 @@ const music = document.getElementById("bgm");
 const msg = document.getElementById("msg");
 
 const texts = {
-  red:"Red rose ❤️ My love for you is deep and true.",
-  pink:"Pink 🌸 Your smile is my comfort.",
-  yellow:"Yellow 🌼 You are my happiness.",
-  white:"White 🤍 My love is pure.",
-  purple:"Purple 💜 You feel magical.",
-  orange:"Orange 🧡 I desire you endlessly.",
-  lavender:"Lavender 💐 You calm my soul.",
-  blue:"Blue 💙 You are rare like the sky.",
-  green:"Green 💚 You are my peace."
+  red:"Red rose for my love ❤️ Bhavya, you are my heartbeat.",
+  pink:"Pink rose for sweetness 🌸 Your smile is my favourite view.",
+  yellow:"Yellow rose for happiness 🌼 You light up my world.",
+  white:"White rose for purity 🤍 My love for you is forever true.",
+  purple:"Purple rose for magic 💜 You feel like a dream.",
+  orange:"Orange rose for desire 🧡 I crave you every moment.",
+  lavender:"Lavender rose for calm 💐 You bring peace to my soul.",
+  blue:"Blue rose for rarity 💙 Just like you, one of a kind.",
+  green:"Green rose for growth 💚 My love grows with you."
 };
 
 function playMusic(){
-  if(music.paused){
-    music.play();
-  }
+  music.play().catch(()=>{});
 }
 
 function orchidClick(){
   playMusic();
   msg.innerText =
-   "Blue Orchid 💙🌸\nBhavya, you are one of a kind.\nNo one compares to you.";
+   "Blue Orchid 💙🌸\nBhavya, some souls are rare.\nAnd you are my once-in-a-lifetime.";
   document.getElementById("nextBtn").style.display="inline-block";
 }
 
