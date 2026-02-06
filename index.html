@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Rose Day Bhavya ❤️</title>
+<title>For Bhavya 💙</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -21,69 +21,73 @@ body{
 
 .card{
   width:100%;
-  max-width:420px;
+  max-width:440px;
   background:white;
   border-radius:25px;
   padding:25px;
   text-align:center;
   box-shadow:0 25px 50px rgba(0,0,0,0.25);
-  animation:pop 0.8s ease;
-}
-
-@keyframes pop{
-  from{transform:scale(0.8);opacity:0}
-  to{transform:scale(1);opacity:1}
 }
 
 h1{
   color:#e60073;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 .subtitle{
   font-size:14px;
   color:#555;
-  margin-bottom:20px;
 }
 
+/* BLUE ORCHID */
+.orchid{
+  font-size:70px;
+  margin:15px 0;
+  cursor:pointer;
+  animation:glow 2s infinite;
+}
+
+@keyframes glow{
+  0%{text-shadow:0 0 5px #4da6ff;}
+  50%{text-shadow:0 0 20px #1e90ff;}
+  100%{text-shadow:0 0 5px #4da6ff;}
+}
+
+/* ROSES */
 .roses{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  gap:16px;
   margin:20px 0;
 }
 
-.rose{
+.flower{
   font-size:42px;
   cursor:pointer;
   transition:0.3s;
 }
 
-.rose:hover{
+.flower:hover{
   transform:scale(1.4) rotate(10deg);
 }
 
+/* MESSAGE */
 .message{
   background:#fff0f5;
   border-radius:18px;
   padding:18px;
-  min-height:90px;
+  min-height:95px;
   display:flex;
   align-items:center;
   justify-content:center;
   color:#b30059;
   font-size:14px;
-  animation:fade 0.5s ease;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
+/* BUTTON */
 .next-btn{
-  margin-top:20px;
-  padding:12px 20px;
+  margin-top:18px;
+  padding:12px 22px;
   border:none;
   border-radius:30px;
   background:#ff4d88;
@@ -93,25 +97,15 @@ h1{
   display:none;
 }
 
-.next-btn:hover{
-  background:#e60073;
-}
-
-/* Final Page */
+/* FINAL PAGE */
 .final{
   display:none;
-  animation:fade 1s ease;
 }
 
 .final h2{
   font-size:26px;
   color:#e60073;
   margin-bottom:15px;
-}
-
-.final p{
-  font-size:15px;
-  color:#555;
 }
 </style>
 </head>
@@ -121,56 +115,85 @@ h1{
 <audio id="bgm" src="song.mp3" loop></audio>
 
 <div class="card" id="page1">
-  <h1>🌹 Happy Rose Day 🌹</h1>
-  <p class="subtitle">For my beautiful Bhavya ❤️</p>
+  <h1>Happy Rose Day 🌹</h1>
+  <p class="subtitle">For Bhavya, the most special girl 💖</p>
 
+  <!-- BLUE ORCHID -->
+  <div class="orchid" onclick="orchidClick()">💙🌸</div>
+  <p style="font-size:12px;color:#555;margin-bottom:10px;">
+    Blue Orchid – because you are rare, unique & irreplaceable 💙
+  </p>
+
+  <!-- ROSES -->
   <div class="roses">
-    <div class="rose" onclick="selectRose('red')">🌹</div>
-    <div class="rose" onclick="selectRose('pink')">🌸</div>
-    <div class="rose" onclick="selectRose('yellow')">🌼</div>
-    <div class="rose" onclick="selectRose('white')">🤍🌹</div>
-    <div class="rose" onclick="selectRose('purple')">💜🌹</div>
-    <div class="rose" onclick="selectRose('orange')">🧡🌹</div>
+    <div class="flower" onclick="select('red')">🌹</div>
+    <div class="flower" onclick="select('pink')">🌸</div>
+    <div class="flower" onclick="select('yellow')">🌼</div>
+    <div class="flower" onclick="select('white')">🤍🌹</div>
+    <div class="flower" onclick="select('purple')">💜🌹</div>
+    <div class="flower" onclick="select('orange')">🧡🌹</div>
+    <div class="flower" onclick="select('lavender')">💐</div>
+    <div class="flower" onclick="select('blue')">💙🌹</div>
+    <div class="flower" onclick="select('green')">💚🌹</div>
   </div>
 
   <div class="message" id="msg">
-    Tap any rose, Bhavya 🌸
+    Tap a flower, Bhavya 💫
   </div>
 
   <button class="next-btn" id="nextBtn" onclick="goFinal()">Next 💖</button>
 </div>
 
 <div class="card final" id="page2">
-  <h2>Bhavya ❤️</h2>
+  <h2>Bhavya 💖</h2>
   <p>
-    From the moment you came into my life,<br>
-    everything became more beautiful.<br><br>
-    You are my happiness,<br>
-    my peace,<br>
-    my forever. 💫
+    Among all flowers,<br>
+    you are my Blue Orchid — rare & unforgettable.<br><br>
+    I choose you today,<br>
+    tomorrow,<br>
+    and always.
   </p>
-  <h2 style="margin-top:20px;">I LOVE YOU 🌹</h2>
+  <h2 style="margin-top:20px;">I LOVE YOU 💙🌹</h2>
 </div>
 
 <script>
-const messages = {
-  red:"Red rose for my love ❤️ Bhavya, you are my heartbeat.",
-  pink:"Pink rose for sweetness 🌸 Your smile is my favourite view.",
-  yellow:"Yellow rose for happiness 🌼 You light up my world.",
-  white:"White rose for purity 🤍 My love for you is forever true.",
-  purple:"Purple rose for magic 💜 You feel like a dream.",
-  orange:"Orange rose for desire 🧡 I crave you every moment."
+const music = document.getElementById("bgm");
+const msg = document.getElementById("msg");
+
+const texts = {
+  red:"Red rose ❤️ My love for you is deep and true.",
+  pink:"Pink 🌸 Your smile is my comfort.",
+  yellow:"Yellow 🌼 You are my happiness.",
+  white:"White 🤍 My love is pure.",
+  purple:"Purple 💜 You feel magical.",
+  orange:"Orange 🧡 I desire you endlessly.",
+  lavender:"Lavender 💐 You calm my soul.",
+  blue:"Blue 💙 You are rare like the sky.",
+  green:"Green 💚 You are my peace."
 };
 
-function selectRose(color){
-  document.getElementById("msg").innerText = messages[color];
-  document.getElementById("nextBtn").style.display = "inline-block";
-  document.getElementById("bgm").play();
+function playMusic(){
+  if(music.paused){
+    music.play();
+  }
+}
+
+function orchidClick(){
+  playMusic();
+  msg.innerText =
+   "Blue Orchid 💙🌸\nBhavya, you are one of a kind.\nNo one compares to you.";
+  document.getElementById("nextBtn").style.display="inline-block";
+}
+
+function select(color){
+  playMusic();
+  msg.innerText = texts[color];
+  document.getElementById("nextBtn").style.display="inline-block";
 }
 
 function goFinal(){
-  document.getElementById("page1").style.display = "none";
-  document.getElementById("page2").style.display = "block";
+  document.getElementById("page1").style.display="none";
+  document.getElementById("page2").style.display="block";
 }
 </script>
 
